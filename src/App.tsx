@@ -1,10 +1,17 @@
-import React from 'react';
+import { ThemeProvider } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
+
+import theme from 'assets'
+import { MyRoutes } from 'components';
+
 
 function App() {
   return (
-    <BrowserRouter>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <MyRoutes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
