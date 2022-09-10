@@ -1,13 +1,33 @@
-import App from 'App';
+import Layout from 'components/Layout';
 import { Routes, Route } from 'react-router-dom'
 
-import { Homepage, Error404 } from 'views'
+import { Homepage, Plants, Error404 } from 'views'
 
 let Navigations = () => {
     return (
         <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="error404" element={<Error404 />} />
+            <Route path="/"
+                element={
+                    <Layout>
+                        <Homepage />
+                    </Layout>
+                }
+            />
+
+            <Route path="/plants"
+                element={
+                    <Layout>
+                        <Plants />
+                    </Layout>
+                }
+            />
+
+            <Route path="error404"
+                element={
+                    <Layout>
+                        <Error404 />
+                    </Layout>
+                } />
         </Routes>
     )
 }

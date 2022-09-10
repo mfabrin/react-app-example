@@ -7,6 +7,11 @@ const theme = createTheme({
             defaultProps: {
                 spacing: 2
             }
+        },
+        MuiContainer: {
+            defaultProps: {
+                maxWidth: false
+            }
         }
     }
 });

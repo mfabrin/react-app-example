@@ -1,0 +1,28 @@
+{
+    "items": [
+        {
+            "plantId": 1,
+            "name": "Maple",
+            "latinName": "Acer palmatum",
+            "years": 25
+        },
+        {
+            "plantId": 2,
+            "name": "Oak",
+            "latinName": "Quercus Ilex",
+            "years": 45
+        },
+        {
+            "plantId": 3,
+            "name": "Farnia",
+            "latinName": "Quercus Robur",
+            "years": 64
+        },
+        {
+            "plantId": 4,
+            "name": "Boxwood",
+            "latinName": "Buxus",
+            "years": 2
+        }
+    ]
+}
