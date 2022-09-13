@@ -12,6 +12,11 @@ const theme = createTheme({
             defaultProps: {
                 maxWidth: false
             }
+        },
+        MuiTextField: {
+            defaultProps: {
+                fullWidth: true
+            }
         }
     }
 });

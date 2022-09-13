@@ -1,26 +1,43 @@
-import { AppBar, Toolbar, Stack, Typography } from "@mui/material";
+import { AppBar, Toolbar, Stack, Typography, Grid } from "@mui/material";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { authContext } from "services";
+import UserMenu from './UserMenu'
 
 interface IProps {
     children: React.ReactNode
 }
 
 let Layout = ({ children }: IProps) => {
+    let { isAuthenticated } = useContext(authContext);
+
     return (
         <div>
             <AppBar position="static" color="inherit" elevation={1}>
                 <Toolbar>
-                    <Stack direction="row" alignItems="center" spacing={2}>
-                        <Link to="/">
-                            <img alt="plants" src={"https://picsum.photos/50"} />
-                        </Link>
+                    <Grid container alignItems="center">
+                        <Grid item>
+                            <Link to="/">
+                                <img alt="plants" src={"/images/jungle-plants.jpg"} width={80} />
+                            </Link>
+                        </Grid>
 
-                        <Link to="/plants">
-                            <Typography variant="body2">
-                                <b>PLANTS</b>
-                            </Typography>
-                        </Link>
-                    </Stack>
+                        {isAuthenticated &&
+                            <>
+                                <Grid item>
+                                    <Link to="/plants">
+                                        <Typography variant="body2">
+                                            <b>PLANTS</b>
+                                        </Typography>
+                                    </Link>
+                                </Grid>
+                                <Grid item xs />
+                                <Grid item>
+                                    <UserMenu />
+                                </Grid>
+                            </>
+                        }
+                    </Grid>
                 </Toolbar>
             </AppBar>
 

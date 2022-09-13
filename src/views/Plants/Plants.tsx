@@ -13,6 +13,7 @@ let Plants = () => {
                 <Table size="small">
                     <TableHead>
                         <TableRow>
+                            <TableCell padding="checkbox" />
                             <TableCell>Name</TableCell>
                             <TableCell>Latin name</TableCell>
                             <TableCell>Years</TableCell>
@@ -21,6 +22,9 @@ let Plants = () => {
                     <TableBody>
                         {plants.map(plant =>
                             <TableRow hover key={plant.plantId}>
+                                <TableCell padding="checkbox">
+                                    <img alt="plants" src={"https://picsum.photos/50"} />
+                                </TableCell>
                                 <TableCell>{plant.name}</TableCell>
                                 <TableCell>{plant.latinName}</TableCell>
                                 <TableCell>{plant.years}</TableCell>
