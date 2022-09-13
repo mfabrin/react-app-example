@@ -24,13 +24,6 @@ let Layout = ({ children }: IProps) => {
 
                         {isAuthenticated &&
                             <>
-                                <Grid item>
-                                    <Link to="/plants">
-                                        <Typography variant="body2">
-                                            <b>PLANTS</b>
-                                        </Typography>
-                                    </Link>
-                                </Grid>
                                 <Grid item xs />
                                 <Grid item>
                                     <UserMenu />

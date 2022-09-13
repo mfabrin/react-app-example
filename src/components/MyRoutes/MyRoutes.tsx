@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
@@ -14,7 +14,9 @@ let Navigations = () => {
 
             <Route path="/account/login" element={<PublicRoute children={<Login />} />} />
 
-            <Route path="error404" element={<Error404 />} />
+            <Route path="/error404" element={<PrivateRoute children={<Error404 />} />} />
+
+            <Route path="*" element={<PrivateRoute children={<Navigate to="/error404" />} />} />
         </Routes>
     )
 }

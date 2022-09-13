@@ -1,4 +1,4 @@
-import { Container, Grid, Typography } from "@mui/material";
+import { Card, CardContent, CardHeader, Container, Grid, Paper, Typography } from "@mui/material";
 import { Formik, Form } from 'formik'
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
@@ -18,32 +18,36 @@ let Login = () => {
     })
 
     return (
-        <Container maxWidth="sm" sx={{ mt: 16 }}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={12} lg>
-                    <Typography variant="h4" gutterBottom>Demo Plants</Typography>
-                    <Formik
-                        validationSchema={loginSchema}
-                        initialValues={loginSchema.getDefault()}
-                        onSubmit={(values, action) => {
-                            let res = login(values.email, values.password);
+        <Container maxWidth="sm" sx={{ mt: 8 }}>
+            <Card>
+                <CardHeader title="Demo Plants" titleTypographyProps={{ variant: "h4" }} />
+                <CardContent>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} md={12} lg>
+                            <Formik
+                                validationSchema={loginSchema}
+                                initialValues={loginSchema.getDefault()}
+                                onSubmit={(values, action) => {
+                                    let res = login(values.email, values.password);
 
-                            action.setSubmitting(false);
+                                    action.setSubmitting(false);
 
-                            if (res === true)
-                                navigate('/');
-                        }}
-                    >
-                        <Form>
-                            <LoginForm />
-                        </Form>
-                    </Formik>
-                </Grid>
-                <Grid item>
-                    <img src="/images/jungle-plants.jpg" alt="cover" width={300} />
-                </Grid>
-            </Grid>
-        </Container>
+                                    if (res === true)
+                                        navigate('/');
+                                }}
+                            >
+                                <Form>
+                                    <LoginForm />
+                                </Form>
+                            </Formik>
+                        </Grid>
+                        <Grid item>
+                            <img src="/images/jungle-plants.jpg" alt="cover" width={300} />
+                        </Grid>
+                    </Grid>
+                </CardContent>
+            </Card>
+        </Container >
     )
 }
 
