@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Stack, Typography, Grid } from "@mui/material";
+import { AppBar, Toolbar, Grid } from "@mui/material";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { authContext } from "services";
