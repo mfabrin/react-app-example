@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Typography } from "@mui/material";
+import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Typography, Grid, Card, CardMedia, CardContent } from "@mui/material";
 import { plantsContext } from "./PlantsContext";
 import { Page } from "components";
 
@@ -8,31 +8,30 @@ let Plants = () => {
 
     return (
         <Page isLoading={isLoading}>
-            <TableContainer>
-                <Typography variant="h4" gutterBottom>My plants</Typography>
-                <Table size="small">
-                    <TableHead>
-                        <TableRow>
-                            <TableCell padding="checkbox" />
-                            <TableCell>Name</TableCell>
-                            <TableCell>Latin name</TableCell>
-                            <TableCell>Years</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {plants.map(plant =>
-                            <TableRow hover key={plant.plantId}>
-                                <TableCell padding="checkbox">
-                                    <img alt="plants" src={"https://picsum.photos/50"} />
-                                </TableCell>
-                                <TableCell>{plant.name}</TableCell>
-                                <TableCell>{plant.latinName}</TableCell>
-                                <TableCell>{plant.years}</TableCell>
-                            </TableRow>
-                        )}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+            <Typography variant="h4" gutterBottom>My plants</Typography>
+            <Grid container>
+                {plants.map((plant, idx) =>
+                    <Grid item key={plant.plantId}>
+                        <Card>
+                            <CardMedia
+                                component="img"
+                                height={144}
+                                width={200}
+                                image={`https://picsum.photos/id/${Math.floor(Math.random() * 100)}/200/144`}
+                                alt="plant"
+                            />
+                            <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {plant.name}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    {plant.latinName} {plant.years} years old
+                                </Typography>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                )}
+            </Grid>
         </Page>
     )
 }
