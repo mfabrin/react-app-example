@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody, Typography, Grid, Card, CardMedia, CardContent } from "@mui/material";
+import { Typography, Grid, Card, CardMedia, CardContent } from "@mui/material";
 import { plantsContext } from "./PlantsContext";
 import { Page } from "components";
 
