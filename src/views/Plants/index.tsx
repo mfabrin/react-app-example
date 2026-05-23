@@ -1,12 +1,12 @@
-import PlantsProvider from './PlantsContext';
-import Plants from './Plants';
+import Plants from "./Plants";
+import PlantsProvider from "./PlantsContext";
 
 const Index = () => {
-    return (
-        <PlantsProvider>
-            <Plants />
-        </PlantsProvider>
-    )
-}
+	return (
+		<PlantsProvider>
+			<Plants />
+		</PlantsProvider>
+	);
+};
 
 export default Index;

@@ -1,29 +1,27 @@
 {
-  "compilerOptions": {
-    "target": "es2025",
-    "lib": ["ES2023", "DOM"],
-    "types": ["vite/client"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "paths": {
-      "@components/*": ["./src/components/*"],
-      "@services/*": ["./src/services/*"],
-      "@views/*": ["./src/views/*"],
-      "@views": ["./src/views/index"]
-    }
-  },
-  "include": [
-    "src"
-  ]
+	"compilerOptions": {
+		"target": "es2025",
+		"lib": ["ES2023", "DOM"],
+		"types": ["vite/client"],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"paths": {
+			"@components/*": ["./src/components/*"],
+			"@services/*": ["./src/services/*"],
+			"@views/*": ["./src/views/*"],
+			"@views": ["./src/views/index"]
+		}
+	},
+	"include": ["src"]
 }
