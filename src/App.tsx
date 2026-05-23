@@ -4,7 +4,7 @@ import { SnackbarProvider } from 'notistack'
 
 import theme from './assets';
 import { MyRoutes } from './components';
-import { AuthProvider } from './services';
+import AuthProvider from '@services/Authentication';
 
 
 function App() {

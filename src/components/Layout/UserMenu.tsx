@@ -1,7 +1,7 @@
 import { ListItemButton, Menu, MenuItem } from '@mui/material';
 import { AccountCircleOutlined as UserMenuIcon } from '@mui/icons-material';
 import { useContext, useState } from 'react';
-import { authContext } from '../../services';
+import { authContext } from '@services/Authentication';
 
 
 const UserMenu = () => {
