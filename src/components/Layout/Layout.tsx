@@ -1,15 +1,15 @@
 import { AppBar, Toolbar, Grid } from "@mui/material";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { authContext } from "services";
+import { authContext } from "@services/Authentication";
 import UserMenu from './UserMenu'
 
 interface IProps {
     children: React.ReactNode
 }
 
-let Layout = ({ children }: IProps) => {
-    let { isAuthenticated } = useContext(authContext);
+const Layout = ({ children }: IProps) => {
+    const { isAuthenticated } = useContext(authContext);
 
     return (
         <div>

@@ -13,24 +13,24 @@ interface IPlant {
     years: number
 }
 
-export let plantsContext = React.createContext({} as IContext);
+export const plantsContext = React.createContext({} as IContext);
 
-let { Provider } = plantsContext;
+const { Provider } = plantsContext;
 
-let PlantsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const PlantsProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
-    let [isLoading, setLoading] = useState(true);
-    let [plants, setPlants] = useState<IPlant[]>([]);
+    const [isLoading, setLoading] = useState(true);
+    const [plants, setPlants] = useState<IPlant[]>([]);
 
     useEffect(() => {
         setTimeout(getPlants, 1000);
     }, [])
 
 
-    let getPlants = async () => {
+    const getPlants = async () => {
         try {
             setLoading(true);
-            let res = await axios.get('./json/plants.json');
+            const res = await axios.get('./json/plants.json');
             setPlants(res.data.items);
 
         } catch (err) {

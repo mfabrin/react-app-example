@@ -1,14 +1,14 @@
 import { CircularProgress } from "@mui/material";
-import { Layout } from "components";
+import Layout from "@components/Layout";
 import React, { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { authContext } from "services";
+import { authContext } from "@services/Authentication";
 
-let PrivateRoute = ({ ...rest }) => {
+const PrivateRoute = ({ ...rest }) => {
 
-    let location = useLocation();
+    const location = useLocation();
 
-    let { isLoading, isAuthenticated } = useContext(authContext);
+    const { isLoading, isAuthenticated } = useContext(authContext);
 
     return (
         <Layout>

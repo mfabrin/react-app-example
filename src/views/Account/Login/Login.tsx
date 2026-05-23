@@ -2,17 +2,17 @@ import { Card, CardContent, CardHeader, Container, Grid } from "@mui/material";
 import { Formik, Form } from 'formik'
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { authContext } from "services";
+import { authContext } from "@services/Authentication";
 import * as yup from 'yup';
 import { LoginForm } from './components';
 
-let Login = () => {
+const Login = () => {
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
-    let { login } = useContext(authContext);
+    const { login } = useContext(authContext);
 
-    let loginSchema = yup.object({
+    const loginSchema = yup.object({
         email: yup.string().default('demo-user@gmail.com').required(),
         password: yup.string().default('Demo$Password!').required()
     })
@@ -28,7 +28,7 @@ let Login = () => {
                                 validationSchema={loginSchema}
                                 initialValues={loginSchema.getDefault()}
                                 onSubmit={(values, action) => {
-                                    let res = login(values.email, values.password);
+                                    const res = login(values.email, values.password);
 
                                     action.setSubmitting(false);
 

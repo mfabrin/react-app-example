@@ -2,7 +2,7 @@ import { Grid, Button } from "@mui/material";
 import { Field } from 'formik'
 import { TextField } from 'formik-mui'
 
-let LoginForm = () => {
+const LoginForm = () => {
     return (
         <Grid container>
             <Grid item xs={12} md={12} lg={12}>

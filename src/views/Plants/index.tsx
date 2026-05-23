@@ -1,7 +1,7 @@
 import PlantsProvider from './PlantsContext';
 import Plants from './Plants';
 
-let Index = () => {
+const Index = () => {
     return (
         <PlantsProvider>
             <Plants />

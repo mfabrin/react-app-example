@@ -1,6 +1,6 @@
 import { Container, Grid } from "@mui/material";
 
-let Error404 = () => {
+const Error404 = () => {
     return (
         <Container>
             <Grid container spacing={2}>

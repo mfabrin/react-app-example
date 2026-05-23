@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Typography, Grid, Card, CardMedia, CardContent } from "@mui/material";
 import { plantsContext } from "./PlantsContext";
-import { Page } from "components";
+import Page from "@components/Page";
 
-let Plants = () => {
-    let { isLoading, plants } = useContext(plantsContext);
+const Plants = () => {
+    const { isLoading, plants } = useContext(plantsContext);
 
     return (
         <Page isLoading={isLoading}>

@@ -1,12 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import { Plants, Error404 } from '@views'
+import { Login } from '@views/Account'
 
-import { Plants, Error404 } from 'views'
-import { Login } from 'views/Account'
-
-let Navigations = () => {
+const Navigations = () => {
     return (
         <Routes>
             <Route path="/" element={<PrivateRoute children={<Plants />} />} />

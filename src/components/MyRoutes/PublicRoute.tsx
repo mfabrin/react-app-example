@@ -1,10 +1,10 @@
 import { CircularProgress } from "@mui/material";
-import { Layout } from "components";
+import Layout from "@components/Layout";
 import React, { useContext } from "react";
-import { authContext } from "services";
+import { authContext } from "@services/Authentication";
 
-let PublicRoute = ({ ...rest }) => {
-    let { isLoading } = useContext(authContext);
+const PublicRoute = ({ ...rest }) => {
+    const { isLoading } = useContext(authContext);
 
     return (
         <Layout>

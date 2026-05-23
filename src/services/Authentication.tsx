@@ -16,25 +16,25 @@ interface IUser {
     lastName: string
 }
 
-export let authContext = React.createContext({} as IAuthContext);
+export const authContext = React.createContext({} as IAuthContext);
 
-let { Provider } = authContext;
+const { Provider } = authContext;
 
-let AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    let { enqueueSnackbar } = useSnackbar();
+const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const { enqueueSnackbar } = useSnackbar();
 
-    let [isLoading, setLoading] = useState(true);
-    let [isAuthenticated, setAuthenticated] = useState(false);
-    let [currentUser, setCurrentUser] = useState<IUser | null>(null);
+    const [isLoading, setLoading] = useState(true);
+    const [isAuthenticated, setAuthenticated] = useState(false);
+    const [currentUser, setCurrentUser] = useState<IUser | null>(null);
 
     useEffect(() => getAuthenticatedUser(), [])
 
     // Fake simulation
-    let getAuthenticatedUser = () => {
+    const getAuthenticatedUser = () => {
         try {
             setLoading(true);
 
-            let currentUser = localStorage.getItem("demo.plants.user");
+            const currentUser = localStorage.getItem("demo.plants.user");
             if (!currentUser)
                 setAuthenticated(false);
             else {
@@ -51,7 +51,7 @@ let AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         }
     }
 
-    let login = (email: string, password: string) => {
+    const login = (email: string, password: string) => {
         if (email !== "demo-user@gmail.com") {
             enqueueSnackbar("User does not exist", { variant: 'error' })
             return false;
@@ -63,7 +63,7 @@ let AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         }
 
         try {
-            let currentUser = {
+            const currentUser = {
                 email,
                 firstName: 'Demo',
                 lastName: 'User'
@@ -79,7 +79,7 @@ let AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         }
     }
 
-    let logout = () => {
+    const logout = () => {
         try {
             localStorage.removeItem("demo.plants.user");
             setCurrentUser(null);

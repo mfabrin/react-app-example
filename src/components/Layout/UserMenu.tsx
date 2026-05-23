@@ -1,16 +1,16 @@
 import { ListItemButton, Menu, MenuItem } from '@mui/material';
 import { AccountCircleOutlined as UserMenuIcon } from '@mui/icons-material';
 import { useContext, useState } from 'react';
-import { authContext } from 'services';
+import { authContext } from '../../services';
 
 
-let UserMenu = () => {
+const UserMenu = () => {
 
-    let { currentUser, logout } = useContext(authContext);
+    const { currentUser, logout } = useContext(authContext);
 
-    let [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-    let isOpen = Boolean(anchorEl);
+    const isOpen = Boolean(anchorEl);
 
 
     return (
