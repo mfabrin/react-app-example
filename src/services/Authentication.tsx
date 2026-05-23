@@ -29,7 +29,6 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 	const [isAuthenticated, setAuthenticated] = useState(false);
 	const [currentUser, setCurrentUser] = useState<IUser | null>(null);
 
-
 	// Fake simulation
 	const getAuthenticatedUser = () => {
 		try {
@@ -49,9 +48,8 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 			setLoading(false);
 		}
 	};
-	
-	useEffect(() => getAuthenticatedUser(), [getAuthenticatedUser]);
 
+	useEffect(() => getAuthenticatedUser(), [getAuthenticatedUser]);
 
 	const login = (email: string, password: string) => {
 		if (email !== "demo-user@gmail.com") {
